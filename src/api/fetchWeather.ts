@@ -11,10 +11,11 @@ export const getWaetherByCoords = async (LAT: number, LON: number): Promise<any>
 };
 
 export const getWeatherBySearch = async (CITY: string): Promise<any> =>{
-    const API_CITY = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid={API_KEY}`;
+    const API_CITY = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}`;
+    
     
     const response = await fetch(API_CITY);
-    const respData = await response.json();
+    const responseData = await response.json();
 
-    return respData;
+    return responseData;
 }
